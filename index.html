@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Muthoni Denis Thuo – Full Stack Developer. Creative-tech theme with subtle corporate elegance." />
+  <meta name="description"
+    content="Portfolio of Muthoni Denis Thuo – Full Stack Developer. Creative-tech theme with subtle corporate elegance." />
   <title>Muthoni Denis Thuo • Full Stack Developer</title>
 
   <!-- ============================
@@ -14,28 +16,46 @@
   <style>
     :root {
       /* Corporate-creative palette */
-      --bg: #0b1020;               /* Deep space blue */
-      --bg-elev: #11172b;          /* Elevated panels */
-      --ink: #e8eefc;              /* Primary text on dark */
-      --muted-ink: #b9c4dd;        /* Secondary text */
-      --primary: #4cc9f0;          /* Muted teal/blue accent */
-      --primary-strong: #00b4d8;   /* Hover accent */
-      --accent: #a0e7e5;           /* Soft highlight */
-      --card: #12192f;             /* Card background */
-      --chip: #1a2342;             /* Chip background */
-      --success: #72f1b8;          /* Success green */
+      --bg: #0b1020;
+      /* Deep space blue */
+      --bg-elev: #11172b;
+      /* Elevated panels */
+      --ink: #e8eefc;
+      /* Primary text on dark */
+      --muted-ink: #b9c4dd;
+      /* Secondary text */
+      --primary: #4cc9f0;
+      /* Muted teal/blue accent */
+      --primary-strong: #00b4d8;
+      /* Hover accent */
+      --accent: #a0e7e5;
+      /* Soft highlight */
+      --card: #12192f;
+      /* Card background */
+      --chip: #1a2342;
+      /* Chip background */
+      --success: #72f1b8;
+      /* Success green */
 
       --radius: 16px;
       --radius-lg: 22px;
-      --shadow-soft: 0 10px 30px rgba(0,0,0,.35);
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, .35);
       --shadow-focus: 0 0 0 3px rgba(76, 201, 240, .25);
 
       --maxw: 1120px;
     }
 
     /* ---- RESET / BASE ---- */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -44,158 +64,553 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    img, video { max-width: 100%; height: auto; display: block; }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { color: var(--primary-strong); }
-    h1,h2,h3 { line-height: 1.15; margin: 0 0 .5rem; }
-    h1 { font-size: clamp(2rem, 4vw + 1rem, 3.2rem); }
-    h2 { font-size: clamp(1.4rem, 2vw + 1rem, 2.2rem); }
-    h3 { font-size: clamp(1.1rem, 1.2vw + .9rem, 1.35rem); }
-    p { margin: .25rem 0 1rem; color: var(--muted-ink); }
 
-    .container { width: min(100% - 2rem, var(--maxw)); margin: 0 auto; }
-    .section { padding: clamp(3rem, 6vw, 5rem) 0; position: relative; }
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--primary-strong);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.15;
+      margin: 0 0 .5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw + 1rem, 3.2rem);
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 2vw + 1rem, 2.2rem);
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 1.2vw + .9rem, 1.35rem);
+    }
+
+    p {
+      margin: .25rem 0 1rem;
+      color: var(--muted-ink);
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--maxw));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      position: relative;
+    }
 
     /* ---- BACKGROUND STARS (pure CSS) ---- */
     .starfield::before,
     .starfield::after {
       content: "";
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       pointer-events: none;
       background-image:
-        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.35) 50%, transparent),
-        radial-gradient(1.5px 1.5px at 70% 80%, rgba(255,255,255,.25) 50%, transparent),
-        radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,.2) 50%, transparent),
-        radial-gradient(1.5px 1.5px at 80% 20%, rgba(255,255,255,.3) 50%, transparent);
+        radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, .35) 50%, transparent),
+        radial-gradient(1.5px 1.5px at 70% 80%, rgba(255, 255, 255, .25) 50%, transparent),
+        radial-gradient(1px 1px at 40% 60%, rgba(255, 255, 255, .2) 50%, transparent),
+        radial-gradient(1.5px 1.5px at 80% 20%, rgba(255, 255, 255, .3) 50%, transparent);
       background-repeat: repeat;
       z-index: -2;
       opacity: .55;
     }
-    .starfield::after { filter: blur(1px) brightness(1.1); opacity: .3; }
+
+    .starfield::after {
+      filter: blur(1px) brightness(1.1);
+      opacity: .3;
+    }
 
     /* ---- NAVBAR ---- */
     header {
-      position: sticky; top: 0; z-index: 200;
-      background: rgba(11,16,32,.7);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(11, 16, 32, .7);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; }
-    .brand { display: flex; gap:.6rem; align-items: center; font-weight: 700; letter-spacing: .2px; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .8rem 0;
+    }
+
+    .brand {
+      display: flex;
+      gap: .6rem;
+      align-items: center;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
     .brand .logo {
-      width: 36px; height: 36px; border-radius: 50%;
-      display: grid; place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
       background: linear-gradient(135deg, #23325a, #0f1a37);
-      box-shadow: inset 0 0 18px rgba(160,231,229,.25), 0 8px 20px rgba(0,0,0,.3);
+      box-shadow: inset 0 0 18px rgba(160, 231, 229, .25), 0 8px 20px rgba(0, 0, 0, .3);
     }
-    .brand .logo span { filter: drop-shadow(0 0 6px rgba(160,231,229,.5)); }
 
-    .nav-links { display: flex; gap: 1rem; align-items: center; }
-    .nav-links a { padding: .45rem .8rem; border-radius: 999px; font-size: .95rem; color: var(--ink); opacity: .9; }
-    .nav-links a:hover { background: rgba(160,231,229,.08); }
+    .brand .logo span {
+      filter: drop-shadow(0 0 6px rgba(160, 231, 229, .5));
+    }
 
-    .btn { display: inline-flex; align-items: center; gap:.5rem; border: 1px solid rgba(160,231,229,.3); padding:.6rem .95rem; border-radius: 999px; cursor: pointer; transition: transform .15s ease, background .2s ease, border-color .2s ease; }
-    .btn:hover { transform: translateY(-1px); background: rgba(76,201,240,.08); border-color: rgba(76,201,240,.55); }
-    .btn.primary { background: linear-gradient(135deg, #16324a, #0b2438); border: 1px solid rgba(76,201,240,.45); }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      padding: .45rem .8rem;
+      border-radius: 999px;
+      font-size: .95rem;
+      color: var(--ink);
+      opacity: .9;
+    }
+
+    .nav-links a:hover {
+      background: rgba(160, 231, 229, .08);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: 1px solid rgba(160, 231, 229, .3);
+      padding: .6rem .95rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(76, 201, 240, .08);
+      border-color: rgba(76, 201, 240, .55);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #16324a, #0b2438);
+      border: 1px solid rgba(76, 201, 240, .45);
+    }
 
     /* Mobile nav */
-    .hamburger { display: none; background: transparent; border: none; color: var(--ink); font-size: 1.6rem; cursor: pointer; }
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--ink);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
     @media (max-width: 860px) {
-      .hamburger { display: block; }
-      .nav-links { position: fixed; inset: 60px 1rem auto 1rem; background: var(--bg-elev); border:1px solid rgba(255,255,255,.06); border-radius: var(--radius-lg); padding: .75rem; display: grid; gap:.25rem; transform-origin: top right; transform: scale(.98); opacity: 0; pointer-events: none; transition: transform .18s ease, opacity .18s ease; }
-      .nav-links.open { transform: scale(1); opacity: 1; pointer-events: auto; }
-      .nav-links a { padding: .8rem 1rem; border-radius: var(--radius); }
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 60px 1rem auto 1rem;
+        background: var(--bg-elev);
+        border: 1px solid rgba(255, 255, 255, .06);
+        border-radius: var(--radius-lg);
+        padding: .75rem;
+        display: grid;
+        gap: .25rem;
+        transform-origin: top right;
+        transform: scale(.98);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .18s ease, opacity .18s ease;
+      }
+
+      .nav-links.open {
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links a {
+        padding: .8rem 1rem;
+        border-radius: var(--radius);
+      }
     }
 
     /* ---- HERO ---- */
-    .hero { display: grid; grid-template-columns: 1.3fr .9fr; gap: clamp(1rem, 3vw, 2.4rem); align-items: center; }
-    .eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .4px; text-transform: uppercase; font-size:.9rem; }
-    .title { margin-top: .25rem; }
-    .subtitle { font-size: 1.05rem; max-width: 60ch; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr .9fr;
+      gap: clamp(1rem, 3vw, 2.4rem);
+      align-items: center;
+    }
 
-    .actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1rem; }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      font-size: .9rem;
+    }
 
-    .avatar-wrap { justify-self: center; }
-    .avatar { width: min(340px, 70vw); aspect-ratio: 1/1; border-radius: 28px; background: radial-gradient(120px 120px at 70% 30%, rgba(160,231,229,.15), transparent 60%), linear-gradient(145deg, #0f1a37, #182545); border: 1px solid rgba(160,231,229,.25); box-shadow: var(--shadow-soft); position: relative; overflow: hidden; }
-    .avatar::after { /* shimmering ring */ content:""; position: absolute; inset: -40%; background: conic-gradient(from 0deg, transparent, rgba(76,201,240,.2), transparent 30%, transparent 60%, rgba(160,231,229,.18)); filter: blur(18px); animation: spin 16s linear infinite; }
-    .avatar svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .85; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .title {
+      margin-top: .25rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      max-width: 60ch;
+    }
+
+    .actions {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .avatar-wrap {
+      justify-self: center;
+    }
+
+    .avatar {
+      width: min(340px, 70vw);
+      aspect-ratio: 1/1;
+      border-radius: 28px;
+      background: radial-gradient(120px 120px at 70% 30%, rgba(160, 231, 229, .15), transparent 60%), linear-gradient(145deg, #0f1a37, #182545);
+      border: 1px solid rgba(160, 231, 229, .25);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar::after {
+      /* shimmering ring */
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 0deg, transparent, rgba(76, 201, 240, .2), transparent 30%, transparent 60%, rgba(160, 231, 229, .18));
+      filter: blur(18px);
+      animation: spin 16s linear infinite;
+    }
+
+    .avatar svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .85;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
     .avatar img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills square & crops nicely */
-}
-    .avatar img:hover { transform: scale(1.05); transition: transform .3s ease; }
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* fills square & crops nicely */
+    }
+
+    .avatar img:hover {
+      transform: scale(1.05);
+      transition: transform .3s ease;
+    }
 
     /* ---- SECTION CARDS ---- */
-    .panel { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius-lg); padding: clamp(1rem, 3vw, 1.5rem); box-shadow: var(--shadow-soft); }
+    .panel {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: var(--radius-lg);
+      padding: clamp(1rem, 3vw, 1.5rem);
+      box-shadow: var(--shadow-soft);
+    }
 
     /* ---- ABOUT ---- */
-    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.25rem; }
-    .lang-list { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .chip { background: var(--chip); border: 1px solid rgba(255,255,255,.06); padding: .35rem .65rem; border-radius: 999px; font-size: .9rem; color: var(--ink); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.25rem;
+    }
+
+    .lang-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .chip {
+      background: var(--chip);
+      border: 1px solid rgba(255, 255, 255, .06);
+      padding: .35rem .65rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      color: var(--ink);
+    }
 
     /* ---- SKILLS ---- */
-    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
-    .skill { background: linear-gradient(135deg, #111a33, #0f1a37); border: 1px solid rgba(160,231,229,.15); padding: .9rem; border-radius: var(--radius); display: flex; align-items: center; justify-content: space-between; transition: transform .15s ease, border-color .2s ease; }
-    .skill:hover { transform: translateY(-2px); border-color: rgba(160,231,229,.35); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+    }
+
+    .skill {
+      background: linear-gradient(135deg, #111a33, #0f1a37);
+      border: 1px solid rgba(160, 231, 229, .15);
+      padding: .9rem;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform .15s ease, border-color .2s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-2px);
+      border-color: rgba(160, 231, 229, .35);
+    }
 
     /* ---- TIMELINE (Experience) ---- */
-    .timeline { position: relative; display: grid; gap: 1rem; }
-    .timeline::before { content:""; position:absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(var(--primary), transparent); opacity: .4; }
-    .event { position: relative; padding-left: 2.5rem; }
-    .event::before { content:""; position: absolute; left: 0; top: .4rem; width: 22px; height: 22px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, var(--primary), #0b2438); border: 2px solid rgba(76,201,240,.5); box-shadow: 0 0 0 4px rgba(76,201,240,.12); }
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(var(--primary), transparent);
+      opacity: .4;
+    }
+
+    .event {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .4rem;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--primary), #0b2438);
+      border: 2px solid rgba(76, 201, 240, .5);
+      box-shadow: 0 0 0 4px rgba(76, 201, 240, .12);
+    }
 
     /* ---- PROJECTS ---- */
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .card { background: linear-gradient(145deg, #101833, #0f1a37); border: 1px solid rgba(255,255,255,.06); padding: 1rem; border-radius: var(--radius-lg); display: grid; gap: .6rem; transition: transform .15s ease, border-color .2s ease; }
-    .card:hover { transform: translateY(-3px); border-color: rgba(160,231,229,.35); }
-    .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .tag { font-size: .8rem; padding: .2rem .5rem; background: var(--chip); border: 1px solid rgba(255,255,255,.06); border-radius: 999px; }
-    .card-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #101833, #0f1a37);
+      border: 1px solid rgba(255, 255, 255, .06);
+      padding: 1rem;
+      border-radius: var(--radius-lg);
+      display: grid;
+      gap: .6rem;
+      transition: transform .15s ease, border-color .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(160, 231, 229, .35);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .tag {
+      font-size: .8rem;
+      padding: .2rem .5rem;
+      background: var(--chip);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 999px;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
 
     /* ---- ACCOMPLISHMENTS ---- */
-    .acc-list { display: grid; gap: .6rem; }
-    .acc-item { display: grid; grid-template-columns: 28px 1fr; gap: .6rem; align-items: start; }
+    .acc-list {
+      display: grid;
+      gap: .6rem;
+    }
+
+    .acc-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: .6rem;
+      align-items: start;
+    }
+
+    #typewriter {
+      display: inline-block;
+      min-height: 1.5em;
+    }
+
+    /* Lock to at least one line */
+
 
     /* ---- CONTACT ---- */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .contact-card { display: grid; gap: .5rem; }
-    .contact-row { display:flex; align-items:center; gap:.6rem; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-card {
+      display: grid;
+      gap: .5rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
 
     /* ---- FOOTER ---- */
-    footer { padding: 2rem 0; color: var(--muted-ink); font-size: .9rem; }
+    footer {
+      padding: 2rem 0;
+      color: var(--muted-ink);
+      font-size: .9rem;
+    }
 
     /* ---- UTILITIES ---- */
-    .tw { white-space: nowrap; }
-    .grid { display: grid; gap: 1rem; }
-    .center { text-align: center; }
-    .muted { color: var(--muted-ink); }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .tw {
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .muted {
+      color: var(--muted-ink);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     /* ---- RESPONSIVE ---- */
     @media (max-width: 980px) {
-      .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .hero,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 640px) {
-      .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ---- ANIMATIONS (scroll fade-in) ---- */
-    .reveal { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
-    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #rotating-title {
+      position: relative;
+      display: inline-block;
+      transition: opacity 0.5s ease-in-out;
+    }
 
     /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .avatar::after { animation: none; }
-      .reveal { transition: none; opacity: 1; transform: none; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      .avatar::after {
+        animation: none;
+      }
+
+      .reveal {
+        transition: none;
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body class="starfield">
   <!-- ============================
        HEADER / NAVIGATION
@@ -214,7 +629,8 @@
         <a href="#projects">Projects</a>
         <a href="#accomplishments">Accomplishments</a>
         <a href="#contact">Contact</a>
-        <a class="btn primary" href="assets/muthoni-denis-thuo-cv.pdf" target="_blank" rel="noopener" download title="Download my CV">⬇ Download CV</a>
+        <a class="btn primary" href="assets/muthoni-denis-thuo-cv.pdf" target="_blank" rel="noopener" download
+          title="Download my CV">⬇ Download CV</a>
       </nav>
     </div>
   </header>
@@ -226,22 +642,31 @@
     <div class="container hero">
       <div class="panel reveal">
         <p class="eyebrow">Hello, world! 👋</p>
-        <h1 class="title" id="intro-title">I’m <span class="tw">Denis Thuo</span> — <span id="rotating-title" class="tw">Full Stack Developer</span></h1>
-        <h2 class="sr-only">Full Stack Developer</h2>
-        <p class="subtitle" id="typewriter" aria-live="polite">Building human-friendly software across the stack…</p>
-        <div class="actions">
-          <a class="btn primary" href="#projects" aria-label="See featured projects">🚀 View Projects</a>
-          <a class="btn" href="#contact" aria-label="Get in touch">📨 Let’s Talk</a>
-        </div>
+        <h1 class="title" id="intro-title">I’m <span class="tw">Denis Thuo</span> — <span id="rotating-title"
+            class="tw">
+            Full Stack Developer
+            <span style="visibility:hidden;position:absolute;">Cybersecurity Enthusiast</span>
+          </span>
+
+          <h2 class="sr-only">Full Stack Developer</h2>
+          <p class="subtitle">
+            Turning specs into 🚀 experiences.<br>
+            Let's craft something delightful and reliable.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#projects" aria-label="See featured projects">🚀 View Projects</a>
+            <a class="btn" href="#contact" aria-label="Get in touch">📨 Let’s Talk</a>
+          </div>
       </div>
 
       <div class="avatar-wrap reveal">
         <!-- Replace with your headshot later: swap the SVG with <img src="assets/your-photo.jpg" alt="Portrait of Muthoni Denis Thuo"> -->
         <div class="avatar" role="img">
-         <img src="assets/thuo-image.jpg" alt="Portrait of Muthoni Denis Thuo">
-      </div>
+          <img src="assets/thuo-image.jpg" alt="Portrait of Muthoni Denis Thuo">
+        </div>
 
-    </div>
+      </div>
   </section>
 
   <!-- ============================
@@ -252,13 +677,14 @@
       <div class="panel reveal">
         <h2 id="about-title">About Me ✨</h2>
         <p>
-          Skilled Computer Science graduate with over a year of hands-on software development experience. 
-          I specialize in creating scalable, user-centered web applications from concept to deployment. 
+          Skilled Computer Science graduate with over a year of hands-on software development experience.
+          I specialize in creating scalable, user-centered web applications from concept to deployment.
           I’m also certified as a <strong>Junior Cybersecurity Analyst</strong> by the Cisco Networking Academy.
         </p>
 
         <p>
-          I blend a creative-tech aesthetic with a calm, corporate polish — crafting interfaces that feel modern while earning trust from recruiters and stakeholders.
+          I blend a creative-tech aesthetic with a calm, corporate polish — crafting interfaces that feel modern while
+          earning trust from recruiters and stakeholders.
         </p>
         <div class="lang-list" aria-label="Languages">
           <span class="chip">🌍 Kiswahili — Native</span>
@@ -272,11 +698,14 @@
           <li><strong>Title:</strong> Full Stack Developer</li>
           <li><strong>Based:</strong> Nairobi, Kenya</li>
           <li><strong>Interests:</strong> Conversational AI, Machine Learning</li>
-          <li><strong>Contact:</strong> <a href="mailto:denisthuo425@gmail.com">denisthuo425@gmail.com</a> · <a href="tel:+254724103347">0724 103 347</a></li>
-          <li><strong>Education:</strong> BSc Computer Science (2021–2025), The Catholic University of Eastern Africa</li>
+          <li><strong>Contact:</strong> <a href="mailto:denisthuo425@gmail.com">denisthuo425@gmail.com</a> · <a
+              href="tel:+254724103347">0724 103 347</a></li>
+          <li><strong>Education:</strong> BSc Computer Science (2021–2025), The Catholic University of Eastern Africa
+          </li>
         </ul>
         <div class="actions">
-          <a class="btn primary" href="assets/muthoni-denis-thuo-cv.pdf" target="_blank" rel="noopener" download title="Download my CV">⬇ Download CV</a>
+          <a class="btn primary" href="assets/muthoni-denis-thuo-cv.pdf" target="_blank" rel="noopener" download
+            title="Download my CV">⬇ Download CV</a>
           <a class="btn" href="#contact">🤝 Hire Me</a>
         </div>
       </div>
@@ -302,7 +731,8 @@
         <div class="skill" role="listitem"><span>Git</span><span class="muted">Branching • PRs</span></div>
         <div class="skill" role="listitem"><span>Vite</span><span class="muted">Fast builds</span></div>
       </div>
-      <p class="muted" style="margin-top:.75rem">Soft skills: Team collaboration 🤝 · Problem-solving 🧩 · Technical support 🛠</p>
+      <p class="muted" style="margin-top:.75rem">Soft skills: Team collaboration 🤝 · Problem-solving 🧩 · Technical
+        support 🛠</p>
     </div>
   </section>
 
@@ -312,7 +742,7 @@
   <section class="section" id="experience" aria-labelledby="exp-title">
     <div class="container panel reveal">
       <h2 id="exp-title">Journey Through the Stars 🌌</h2>
-       <p class="muted">Navigating through the cosmos of professional experience</p>
+      <p class="muted">Navigating through the cosmos of professional experience</p>
       <div class="timeline" role="list">
         <article class="event panel" role="listitem" aria-labelledby="yali-title">
           <h3 id="yali-title">Software Development & System Support — YALI RLC East Africa (USAID)</h3>
@@ -352,9 +782,11 @@
         <!-- Project 1 -->
         <article class="card" aria-labelledby="p1-title">
           <h3 id="p1-title">YALI Portal Enhancements</h3>
-          <p>Collaborated with a team to  maintain the web application for data processing and system automation. Also provided technical support, ensuring seamless functionality by troubleshooting and resolving issues.</p>
+          <p>Collaborated with a team to maintain the web application for data processing and system automation. Also
+            provided technical support, ensuring seamless functionality by troubleshooting and resolving issues.</p>
           <div class="tags">
-            <span class="tag">HTML</span><span class="tag">PostgreSQL</span><span class="tag">JAVASCRIPT</span><span class="tag">PHP</span>
+            <span class="tag">HTML</span><span class="tag">PostgreSQL</span><span class="tag">JAVASCRIPT</span><span
+              class="tag">PHP</span>
           </div>
           <div class="card-actions">
             <a class="btn" href="https://elearning.rlceastafrica.org/" target="_blank" rel="noopener">🛰 Live</a>
@@ -365,7 +797,8 @@
           <h3 id="p2-title">CBC Performance Tracker</h3>
           <p>Educational web app to manage student performance with filters by year, term, and grade.</p>
           <div class="tags">
-            <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JAVASCRIPT</span>
+            <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span><span
+              class="tag">CSS</span><span class="tag">JAVASCRIPT</span>
           </div>
           <div class="card-actions">
             <a class="btn" href="https://github.com/denisthuo425-jude" target="_blank" rel="noopener">🔗 GitHub</a>
@@ -380,7 +813,8 @@
             <span class="tag">JavaScript</span><span class="tag">Vite</span><span class="tag">React</span>
           </div>
           <div class="card-actions">
-            <a class="btn" href="https://github.com/your-username/ai-playground" target="_blank" rel="noopener">🔗 GitHub</a>
+            <a class="btn" href="https://github.com/your-username/ai-playground" target="_blank" rel="noopener">🔗
+              GitHub</a>
             <a class="btn" href="#" aria-disabled="true">🛰 Live</a>
           </div>
         </article>
@@ -414,7 +848,7 @@
             Automation and performance tuning experience across PostgreSQL/MySQL-backed apps.
           </div>
         </div>
-         <div class="acc-item">
+        <div class="acc-item">
           <div aria-hidden="true">💻</div>
           <div>
             Built and deployed multiple web applications for both educational and professional use.
@@ -453,7 +887,7 @@
         </div>
         <div class="contact-row">
           <span>💼 Linkedin </span>
-          <a href="https://www.linkedin.com/in/denis-thuo-037720244"target="_blank" rel="noopener">denis-thuo</a>
+          <a href="https://www.linkedin.com/in/denis-thuo-037720244" target="_blank" rel="noopener">denis-thuo</a>
         </div>
       </div>
       <div class="panel reveal contact-card">
@@ -461,13 +895,16 @@
         <!-- Simple static form: action uses mailto so it works on a static site -->
         <form action="https://formspree.io/f/mnnzryql" method="POST">
           <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your full name" required aria-required="true" style="width:100%; padding:.7rem; border-radius: var(--radius); border:1px solid rgba(255,255,255,.12); background:#0f162e; color: var(--ink);">
+          <input id="name" name="name" type="text" placeholder="Your full name" required aria-required="true"
+            style="width:100%; padding:.7rem; border-radius: var(--radius); border:1px solid rgba(255,255,255,.12); background:#0f162e; color: var(--ink);">
 
           <label for="email" style="display:block; margin-top:.6rem;">Email</label>
-          <input id="email" name="email" type="email" placeholder="your.email@example.com" required style="width:100%; padding:.7rem; border-radius: var(--radius); border:1px solid rgba(255,255,255,.12); background:#0f162e; color: var(--ink);">
+          <input id="email" name="email" type="email" placeholder="your.email@example.com" required
+            style="width:100%; padding:.7rem; border-radius: var(--radius); border:1px solid rgba(255,255,255,.12); background:#0f162e; color: var(--ink);">
 
           <label for="message" style="display:block; margin-top:.6rem;">Message</label>
-          <textarea id="message" name="message" rows="5"  placeholder="Type your message here…" required style="width:100%; padding:.7rem; border-radius: var(--radius); border:1px solid rgba(255,255,255,.12); background:#0f162e; color: var(--ink);"></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Type your message here…" required
+            style="width:100%; padding:.7rem; border-radius: var(--radius); border:1px solid rgba(255,255,255,.12); background:#0f162e; color: var(--ink);"></textarea>
 
           <button class="btn primary" type="submit" style="margin-top:.8rem; color:white;">🚀 Launch Channel</button>
           <p id="form-status" style="color: lightgreen; display: none;">Message sent successfully!</p>
@@ -492,62 +929,25 @@
     // Close menu on link click (mobile UX)
     navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    // ===== Typewriter Effect (Hero subtitle) =====
-    (function typewriter(){
-      const el = document.getElementById('typewriter');
-      if (!el) return;
-      const phrases = [
-        'Building human-friendly software across the stack…',
-        'Turning specs into 🚀 experiences.',
-        'Python · PHP · React · PostgreSQL · MySQL',
-        'Let\'s craft something delightful and reliable.'
-      ];
-      let i = 0, j = 0, deleting = false;
-      function tick(){
-        const current = phrases[i];
-        if (!deleting) {
-          el.textContent = current.slice(0, j++);
-          if (j > current.length + 6) deleting = true;
-        } else {
-          el.textContent = current.slice(0, j--);
-          if (j === 0) { deleting = false; i = (i + 1) % phrases.length; }
-        }
-        const delay = deleting ? 40 : 60; // gentle pace
-        setTimeout(tick, delay);
+
+    const form = document.querySelector("form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        status.style.display = "block";
+        form.reset();
+      } else {
+        alert("Oops! There was a problem sending your message.");
       }
-      tick();
-    })();
-  const form = document.querySelector("form");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
     });
-    if (response.ok) {
-      status.style.display = "block";
-      form.reset();
-    } else {
-      alert("Oops! There was a problem sending your message.");
-    }
-  });
-
-    const titles = ["Full Stack Developer","Cybersecurity Enthusiast","Problem Solver","Creative Coder"];
-    let idx = 0;
-    const el = document.getElementById('rotating-title');
-    function rotateTitles(){
-      el.classList.remove('show');
-      setTimeout(() => {
-        el.textContent = titles[idx];
-        el.classList.add('show');
-        idx = (idx + 1) % titles.length;
-      }, 1000);
-    }
-    setInterval(rotateTitles, 3000);
 
     // ===== Scroll Reveal (IntersectionObserver) =====
     const observer = new IntersectionObserver((entries) => {
@@ -573,6 +973,27 @@
 
     // ===== Current year in footer =====
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Rotating Title Effect =====
+    const roles = [
+      "Full Stack Developer",
+      "Cybersecurity Enthusiast",
+      "Problem Solver",
+      "Creative Coder"
+    ];
+    let index = 0;
+    const titleEl = document.getElementById("rotating-title");
+
+    setInterval(() => {
+      titleEl.style.opacity = 0;
+      setTimeout(() => {
+        index = (index + 1) % roles.length;
+        titleEl.textContent = roles[index];
+        titleEl.style.opacity = 1;
+      }, 500);
+    }, 3000);
+
   </script>
 </body>
+
 </html>
