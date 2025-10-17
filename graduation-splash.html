@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 Welcome to Thuo's Graduation! 🎉</title>
+    <style>
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft background */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Crucial for clean floating effect */
+            color: #333;
+        }
+
+        /* Welcome Message Styling */
+        .welcome-box {
+            background-color: white;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 10; /* Ensures text is on top of emojis */
+            max-width: 90%;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #007bff; /* A nice, celebratory blue */
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 0;
+        }
+
+        /* Loading Bar (Optional but nice visual) */
+        .loading-bar {
+            height: 5px;
+            width: 80%;
+            background-color: #ddd;
+            margin-top: 20px;
+            border-radius: 2.5px;
+            overflow: hidden;
+            max-width: 400px;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0;
+            background-color: #ffc107; /* Gold/Yellow color */
+            animation: loadProgress 6s linear forwards;
+        }
+
+        /* --- Floating Emoji/Balloon CSS --- */
+
+        .emoji-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allows clicks to go through to elements underneath */
+            z-index: 5;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 2em; /* Size of the emojis */
+            opacity: 0.8;
+            animation: floatUp 6s linear infinite; /* 6s to float up */
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes loadProgress {
+            to { width: 100%; }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="emoji-container" id="emojiContainer">
+        </div>
+
+    <div class="welcome-box">
+        <h1>🎉 Welcome to Thuo's Graduation! 🎓</h1>
+        <p>Thank you for coming.</p>
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+        <p style="font-size: 0.8em; color: #aaa;">Redirecting to the portfolio in a moment...</p>
+    </div>
+
+    <script>
+        // --- 1. Automatic Redirect Script ---
+        // Sets a timer to change the page location after 6000 milliseconds (6 seconds)
+        setTimeout(function() {
+            // **!! IMPORTANT !!**
+            // Replace the URL below with your actual main portfolio URL
+            window.location.href = 'https://denisthuo425-jude.github.io/thuo-portfolio/';
+        }, 6000); // 6 seconds
+
+        // --- 2. Floating Emojis Script ---
+        const emojis = ['🎈', '🎉', '🌟', '🥳', '🍾', '🎊', '✨', '🎓'];
+        const container = document.getElementById('emojiContainer');
+        const count = 25; // Number of emojis to generate
+
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            emoji.classList.add('emoji');
+            
+            // Choose a random emoji
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Random horizontal position (0% to 100% width)
+            emoji.style.left = Math.random() * 100 + 'vw';
+            
+            // Random delay so they don't all start at once
+            emoji.style.animationDelay = Math.random() * 6 + 's';
+            
+            // Random duration for slightly varied floating speeds
+            emoji.style.animationDuration = (Math.random() * 4 + 6) + 's'; 
+            
+            container.appendChild(emoji);
+        }
+
+        // Generate the emojis
+        for (let i = 0; i < count; i++) {
+            createEmoji();
+        }
+    </script>
+
+</body>
+</html>
